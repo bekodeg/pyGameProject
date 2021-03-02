@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame import sprite
-from figures import Rect, Circle
+from figures import *
 from tools import load_image, Button, BlackRect, Palette
 from PyQt5.QtWidgets import QColorDialog, QApplication, QFileDialog, QMainWindow
 
@@ -92,6 +92,7 @@ def tool_init():
     tool_group.update(event=pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=(width - 369, 6)))
     tool_setting(Rect, 'rect', (width - 500, 5), True)
     tool_setting(Circle, 'circle', (width - 440, 5))
+    tool_setting(Line, 'line', (width - 560, 5))
 
 
 if __name__ == '__main__':
@@ -111,6 +112,7 @@ if __name__ == '__main__':
     rect = Rect(draw_group)
     copy = None
     old = None
+    tool = None
 
     print(*map(lambda x: x.rect, tool_group))
     running = True
