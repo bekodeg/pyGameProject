@@ -56,7 +56,7 @@ def save(*args):
         screen = pygame.Surface((width, height - 60))
         screen.blit(main_screen, (0, -60))
         pygame.image.save(screen, f_name)
-    except ValueError:
+    except Exception:
         pass
 
 
@@ -71,7 +71,7 @@ def open_im(*args):
         main_screen = pygame.display.set_mode(size)
         background = pygame.Surface(size)
         background.blit(screen, (0, 60))
-    except ValueError:
+    except Exception:
         pass
 
 
